@@ -19,7 +19,7 @@ const playerInput = prompt("Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyc
 
 console.log("Gracz wpisał: " + playerInput);
 
-const playerMove = getMoveName(randomNumber);
+const playerMove = getMoveName(playerInput);
 printMessage("Twój ruch to: " + playerMove);
 
 function displayResult(argComputerMove, argPlayerMove) {

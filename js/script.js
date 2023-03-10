@@ -1,7 +1,7 @@
 function playGame() {
-  const playerMove = getMoveName(playerInput);
+  var playerMove = getMoveName(playerInput);
     testButton.addEventListener('click', buttonClicked);
-    };
+    
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log("Wylosowana liczba to: " + randomNumber);
   
@@ -18,9 +18,6 @@ function playGame() {
   const computerMove = getMoveName(randomNumber);
   
   printMessage("Mój ruch to: " + computerMove);
-  
-  
-  
   console.log("Gracz wpisał: " + playerInput);
   
   const playerMove = getMoveName(playerInput);
@@ -51,6 +48,8 @@ function playGame() {
       printMessage("Tym razem przegrywasz :(");
     }
   }
+}
+
   playGame(3);
   displayResult(computerMove,playerMove);
   

@@ -1,4 +1,5 @@
 function playGame() {
+  clearMessages ();
   var playerMove = getMoveName(playerInput);
     testButton.addEventListener('click', buttonClicked);
     
@@ -48,24 +49,16 @@ function playGame() {
       printMessage("Tym razem przegrywasz :(");
     }
   }
+  
 }
 
-  playGame(3);
-  displayResult(computerMove,playerMove);
-  
-
- const pickRock = document.getElementById(ROCK);
- const pickPaper = document.getElementById(PAPER);
- const pickScissors = document.getElementById(SCISSORS);
-  
- pickRock.addEventListener("click", function playGame () {
-  playerMove(ROCK);
+ 
+document.getElementById('play-rock').addEventListener('click', function(){
+  playGame (1);
 });
-
-pickPaper.addEventListener("click", function playGame () {
-  playerMove(PAPER);
+document.getElementById('play-paper').addEventListener('click', function(){
+  playGame (2);
 });
-
-pickScissors.addEventListener("click", function playGame () {
-  playerMove(SCISSORS);
+document.getElementById('play-scissors').addEventListener('click', function(){
+  playGame (3);
 });

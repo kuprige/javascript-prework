@@ -1,7 +1,8 @@
-function playGame() {
+function playGame(playerInput) {
   clearMessages();
+  
   const playerMove = getMoveName(playerInput);
-  testButton.addEventListener("click", buttonClicked);
+  printMessage("Twój ruch to: " + playerMove);
 
   const randomNumber = Math.floor(Math.random() * 3 + 1);
   console.log("Wylosowana liczba to: " + randomNumber);
@@ -21,10 +22,8 @@ function playGame() {
   printMessage("Mój ruch to: " + computerMove);
   console.log("Gracz wpisał: " + playerInput);
 
-  const playerMove = getMoveName(playerInput);
-  printMessage("Twój ruch to: " + playerMove);
 
-  function displayResult(argComputerMove, argPlayerMove) {
+    function displayResult(argComputerMove, argPlayerMove) {
     printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 
     if (argComputerMove == "kamień" && argPlayerMove == "papier") {
@@ -43,10 +42,8 @@ function playGame() {
       printMessage("Tym razem przegrywasz :(");
     }
   }
-
   displayResult(computerMove, playerMove);
 }
-
 document.getElementById("play-rock").addEventListener("click", function () {
   playGame(1);
 });

@@ -1,11 +1,11 @@
 {
-  function playGame(playerInput) {
+  const playGame = function (playerInput) {
     clearMessages();
 
     const randomNumber = Math.floor(Math.random() * 3 + 1);
     console.log("Wylosowana liczba to: " + randomNumber);
 
-    function getMoveName(randomNumber) {
+    const getMoveName = function (randomNumber) {
       if (randomNumber == 1) {
         return "kamień";
       } else if (randomNumber == 2) {
@@ -14,14 +14,14 @@
         return "nożyce";
       }
       return "Nieznany ruch";
-    }
+    };
     const playerMove = getMoveName(playerInput);
     printMessage("Twój ruch to: " + playerMove);
     const computerMove = getMoveName(randomNumber);
     printMessage("Mój ruch to: " + computerMove);
     console.log("Gracz wpisał: " + playerInput);
 
-    function displayResult(argComputerMove, argPlayerMove) {
+    const displayResult = function (argComputerMove, argPlayerMove) {
       printMessage("Zagrałem " + argComputerMove + ", a Ty " + argPlayerMove);
 
       if (argComputerMove == "kamień" && argPlayerMove == "papier") {
@@ -39,9 +39,9 @@
       } else {
         printMessage("Tym razem przegrywasz :(");
       }
-    }
+    };
     displayResult(computerMove, playerMove);
-  }
+  };
   document.getElementById("play-rock").addEventListener("click", function () {
     playGame(1);
   });
